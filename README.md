@@ -6,13 +6,7 @@ Add the following to main.js
 ### `const { default: installExtension, REDUX_DEVTOOLS} = require('electron-devtools-installer');`
 Within the main window add
 
-### `installExtension(REDUX_DEVTOOLS)
-  .then(name => {
-    console.log(`Added Extension:  ${name}`);
-  })
-  .catch(err => {
-    console.log("An error occurred: ", err);
-  });`
+### `installExtension(REDUX_DEVTOOLS).then(name => {console.log(`Added Extension:  ${name}`);}).catch(err => {console.log("An error occurred: ", err);});`
 
 ## Available Scripts
 
