@@ -1,9 +1,23 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Add Redux DevTools to Electron
+Use the following package to add Redux tools to Electron
+### `npm i --save-dev electron-devtools-installer`
+Add the following to main.js 
+### `const { default: installExtension, REDUX_DEVTOOLS} = require('electron-devtools-installer');`
+Within the main window add
+
+### `installExtension(REDUX_DEVTOOLS)
+  .then(name => {
+    console.log(`Added Extension:  ${name}`);
+  })
+  .catch(err => {
+    console.log("An error occurred: ", err);
+  });`
 
 ## Available Scripts
 
 In the project directory, you can run:
-## `npm run electron-start`
+### `npm run electron-start`
 Runs the electron application.
 
 ### `npm start`
