@@ -2,13 +2,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Add Redux DevTools to Electron
 Use the following package to add Redux tools to Electron
 ### `npm i --save-dev electron-devtools-installer`
-Add the following to main.js 
+Add the following to plubic/main.js 
 ```
+const { app, BrowserWindow } = require("electron");
 const { default: installExtension, REDUX_DEVTOOLS} = require('electron-devtools-installer');
-```
-Within the main window add
 
-```
+function createWindow() {
+  // Create the browser window.
+  win = new BrowserWindow({
+    width: 800,
+    height: 600
+  });
+
+  // and load the index.html of the app.
+  win.loadURL('http://localhost:3000/');
+
 installExtension(REDUX_DEVTOOLS)
   .then(name => {
     console.log(`Added Extension:  ${name}`);
@@ -16,6 +24,9 @@ installExtension(REDUX_DEVTOOLS)
   .catch(err => {
     console.log("An error occurred: ", err);
   });
+
+}
+app.on("ready", createWindow);
 ```
 ## Available Scripts
 
