@@ -3,7 +3,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Use the following package to add Redux tools to Electron
 ### `npm i --save-dev electron-devtools-installer`
 Add the following to main.js 
-### ```const { default: installExtension, REDUX_DEVTOOLS} = require('electron-devtools-installer');```
+```
+const { default: installExtension, REDUX_DEVTOOLS} = require('electron-devtools-installer');
+```
 Within the main window add
 
 ```
